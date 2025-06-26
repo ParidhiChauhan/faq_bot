@@ -1,0 +1,27 @@
+[
+  {
+    "question": "How do I block my debit card?",
+    "answer": "To block your Jupiter debit card, go to the Cards section in the app, select your card, and choose 'Block Card'.",
+    "category": "cards"
+  },
+  {
+    "question": "How can I check my UPI transaction limit?",
+    "answer": "You can check your UPI limit by going to Settings > Payments > UPI Settings in the Jupiter app.",
+    "category": "payments"
+  },
+  {
+    "question": "What documents are needed for KYC verification?",
+    "answer": "You will need your Aadhaar number and PAN card for completing KYC in Jupiter.",
+    "category": "kyc"
+  },
+  {
+    "question": "How does the rewards system work?",
+    "answer": "You earn points for every transaction. Points can be redeemed for cashback or gift cards from the Rewards section.",
+    "category": "rewards"
+  },
+  {
+    "question": "What is the daily withdrawal limit on my card?",
+    "answer": "The default daily withdrawal limit is ₹25,000. You can modify this under Card Settings in the app.",
+    "category": "limits"
+  }
+]

@@ -1,0 +1,11 @@
+
+requests
+beautifulsoup4
+openai
+faiss-cpu
+numpy
+streamlit
+pandas
+python-dotenv
+langdetect
+googletrans==4.0.0-rc1
