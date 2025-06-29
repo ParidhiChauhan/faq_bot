@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, render_template
-from faq_bot_llm import answer_query
+from backend.faq_bot_llm import answer_query
 
 app = Flask(__name__)
 
