@@ -13,3 +13,7 @@ flask
 gunicorn
 faiss-cpu
 numpy
+flask
+gunicorn
+faiss-cpu
+numpy

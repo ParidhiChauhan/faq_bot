@@ -1,11 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from faq_bot_llm import answer_query
 
 app = Flask(__name__)
 
-@app.route("/", methods=["GET"])
+@app.route("/")
 def home():
-    return "Jupiter FAQ Bot is up!"
+    return render_template("index.html")
 
 @app.route("/api/ask", methods=["POST"])
 def ask():

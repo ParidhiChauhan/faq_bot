@@ -1,26 +1,14 @@
-
-import openai
 from embed_search import build_faiss_index, get_embeddings, search_index
 
-from config import OPENAI_API_KEY
+# Dummy LLM-like response generator
+def generate_answer(user_question, matched_faq):
+    return f"🤖 Here's something that might help:\n\n**Q:** {matched_faq['question']}\n**A:** {matched_faq['answer']}"
 
-openai.api_key = OPENAI_API_KEY
-
-def answer_query(query):
+def answer_query(user_query):
     index, faq_data = build_faiss_index()
-    query_embedding = get_embeddings([query])[0]
-    top_indices = search_index(index, query_embedding)
-    best_faq = faq_data[top_indices[0]]
-    
-    prompt = f"Q: {query}\n\nRelevant Info: {best_faq['question']} - {best_faq['answer']}\n\nAnswer in friendly tone:"
-    response = openai.ChatCompletion.create(
-        model="gpt-4",
-        messages=[
-            {"role": "system", "content": "You are a helpful support assistant for a banking app."},
-            {"role": "user", "content": prompt}
-        ]
-    )
-    return response['choices'][0]['message']['content'].strip()
+    query_vector = get_embeddings([user_query])
+    top_idx = search_index(index, query_vector)
+    return generate_answer(user_query, faq_data[top_idx])
 
 if __name__ == "__main__":
     user_query = input("Ask your question: ")
