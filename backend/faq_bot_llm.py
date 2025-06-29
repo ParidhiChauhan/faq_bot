@@ -1,4 +1,5 @@
-from embed_search import build_faiss_index, get_embeddings, search_index
+from backend.embed_search import build_faiss_index, get_embeddings, search_index
+
 
 # Dummy LLM-like response generator
 def generate_answer(user_question, matched_faq):
